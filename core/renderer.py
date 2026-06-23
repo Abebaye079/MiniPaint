@@ -11,6 +11,10 @@ class Renderer:
     def render_scene(self, shape_manager):
         """Main render calls happen here."""
         self.clear()
+        
+        glMatrixMode(GL_MODELVIEW)
+        glLoadIdentity() 
+
         shape_manager.draw_all()
         
         glFlush()
