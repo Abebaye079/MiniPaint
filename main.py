@@ -58,9 +58,7 @@ def main():
     glfw.set_mouse_button_callback(window, mouse_handler.mouse_button_callback)
     glfw.set_key_callback(window, key_callback)
 
-    # =================================================================
-    # --- ISRAEL'S TRANSFORMATION SYSTEM VERIFICATION TEST ---
-    # =================================================================
+    
     
     # Test Shape 1: A static reference line (Black)
     # This proves other shapes aren't accidentally affected by global matrix leaks.

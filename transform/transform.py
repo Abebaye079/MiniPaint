@@ -25,10 +25,7 @@ class Transform:
     # ------------------------------------------------------------------
 
     def get_matrix(self):
-        """
-        Return the composed 3x3 TRS matrix (list-of-rows).
-        Useful for inspection, hit-testing, or further math.
-        """
+       
         return compose(self.tx, self.ty, self.rotation, self.sx, self.sy)
 
     def get_opengl_matrix(self):

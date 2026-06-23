@@ -11,3 +11,6 @@ def setup_viewport(width, height):
     
     glMatrixMode(GL_MODELVIEW)
     glLoadIdentity()
+    """
+    core"""
+    
