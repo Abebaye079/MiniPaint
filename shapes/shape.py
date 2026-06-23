@@ -11,11 +11,7 @@ class Shape:
         raise NotImplementedError("Subclasses must implement draw()")
 
     def apply_opengl_transforms(self):
-        """
-        Israel's Transformation Pipeline.
-        Applies transformations using standard matrix multiplication order:
-        Translation -> Rotation -> Scale
-        """
+        
         from OpenGL.GL import glTranslatef, glRotatef, glScalef
         
         # 1. Move the shape's coordinate space
