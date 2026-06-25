@@ -1,3 +1,4 @@
+# OpenGL and other dependencies
 import sys
 
 from OpenGL.GL import (
@@ -51,6 +52,7 @@ kb_handler    = KeyboardHandler(state, shape_mgr, selection_mgr)
 def display_cb():
     renderer.display()
 
+# GLUT CALLBACK
 def reshape_cb(w, h):
     cfg["WIN_W"] = w
     cfg["WIN_H"] = h

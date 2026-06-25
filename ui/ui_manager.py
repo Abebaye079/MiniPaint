@@ -1,3 +1,4 @@
+# OpenGL and other dependencies imported
 from OpenGL.GL import (
     glBegin, glEnd, glVertex2f, glColor3f,
     glLineWidth, glRasterPos2f,
@@ -13,6 +14,7 @@ from OpenGL.GLUT import (
 from shapes.shape import Tool
 from core.constants import cfg, PALETTE, SIDEBAR
 
+# UI Manager
 class UIManager:
 
     def __init__(self, state: dict, shape_mgr, selection_mgr):
@@ -112,6 +114,7 @@ class UIManager:
 
         self._pop_pixel_ortho()
 
+    # Draw status bar
     def draw_status_bar(self):
         VP_W = cfg["VP_W"]
         VP_H = cfg["VP_H"]
@@ -132,6 +135,7 @@ class UIManager:
         for ch in text:
             glutBitmapCharacter(font, ord(ch))
 
+    # Draw a rectangle
     def _rect(self, x, y, w, h, color):
         glColor3f(*color)
         glBegin(GL_QUADS)
@@ -139,6 +143,7 @@ class UIManager:
         glVertex2f(x + w, y + h); glVertex2f(x,     y + h)
         glEnd()
 
+    # Draw a horizontal line
     def _divider(self, sx, y):
         glColor3f(0.28, 0.28, 0.40)
         glBegin(GL_LINES)
