@@ -1,26 +1,17 @@
-from OpenGL.GL import *
-from shapes.shape import Shape
+import math
+from shapes.shape import Shape, Tool
 
-class Polygon(Shape):
-    def __init__(self, points=None, color=(0, 1, 0)):
-        super().__init__(color)
-        self.vertices = points if points else []
 
-    def add_point(self, point):
-        self.vertices.append(point)
+def regular_polygon_vertices(cx: float, cy: float,
+                              r: float, n: int) -> list:
+    pts = []
+    for i in range(n):
+        a = 2 * math.pi * i / n - math.pi / 2
+        pts.append((cx + r * math.cos(a), cy + r * math.sin(a)))
+    return pts
 
-    def draw(self):
-        if len(self.vertices) < 3:
-            return
 
-        glPushMatrix()  # Isolate matrix state
-        self.apply_opengl_transforms()
-
-        glColor3f(*self.color)
-        glBegin(GL_POLYGON)
-        for x, y in self.vertices:
-            glVertex2f(x, y)
-        glEnd()
-
-        glPopMatrix()  # Restore matrix state
-
+def create_polygon(cx: float, cy: float, r: float, n: int,
+                   color: tuple, lw: float, filled: bool) -> Shape:
+    verts = regular_polygon_vertices(cx, cy, r, n)
+    return Shape(Tool.POLYGON, verts, color, lw, filled)
