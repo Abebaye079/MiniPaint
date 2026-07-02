@@ -74,3 +74,14 @@ MiniPaint/
 - **2D Affine Transformation Sequences** (T·R·S) — `transform/matrix.py`, `transform/transform.py`
 - **Mouse & Keyboard Callbacks** — `input/`
 - **Vector shape storage** (no pixel manipulation) — `shapes/
+
+## Members
+
+| Full Name        | ID          |
+| ---------------- | ----------- |
+| Abebaye Agumasie | UGR/9919/16 |
+| Hemen Solomon    | UGR/1728/16 |
+| Israel Shimeles  | UGR/7570/16 |
+| Nanat Abeshu     | UGR/6300/16 |
+| Tsion Tibebe     | UGR/5794/16 |
+| Kaleab Lemma     | UGR/2941/16 |
